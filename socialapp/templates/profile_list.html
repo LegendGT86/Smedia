@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
     <h1>Profile list</h1>
@@ -6,11 +7,38 @@
 
 {% if profiles %}
     {% for profile in profiles %}
-        Username: {{ profile.user.username }}
-        Link: @{{ profile.user.username|lower }}
-        <br/><br/>
+
+    <div class="card text-bg-primary mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{% static 'images/default.jpg' %}" class="img-fluid rounded-start" alt="Profile Image">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ profile.user.username }}</h5>
+              <p class="card-text">@{{ profile.user.username|lower }}</p>
+              <br/><br/>
+              <p class="card-text"><small class="text-body-secondary">Last Updated: {{profile.date_modified }}
+
+              </small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br/><br/>
+
     {% endfor %}
 
 {% endif %}
 
 {% endblock %}
+
+<!-- Card colors
+card text-bg-dark mb-3
+card text-bg-light mb-3
+card text-bg-info mb-3
+card text-bg-warning mb-3
+card text-bg-success mb-3
+card text-bg-danger mb-3
+card text-bg-secondary mb-3 -->
