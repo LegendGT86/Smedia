@@ -12,23 +12,24 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
+          {% if user.is_authenticated %}
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Activity
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Activity
             </a>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">What do you need?</a></li>
-                <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">What do you need?</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="{% url 'profile' request.user.id %}">My Profile</a></li>
               <li><a class="dropdown-item" href="#">Calendar</a></li>
               <li><a class="dropdown-item" href="#">Notes</a></li>
-              <li><a class="dropdown-item" href="{% url 'profile_list' %}">Profiles</a></li>
+              <li><a class="dropdown-item" href="{% url 'profile_list' %}">Followers Profiles</a></li>
               <li><a class="dropdown-item" href="#">Daily Markets</a></li>
-              <li><a class="dropdown-item" href="#">Phonebook</a></li>
               <li><a class="dropdown-item" href="#">View emails</a></li>
             </ul>
+          {% endif %}
           </li>
           <li class="nav-item">
-            <a class="nav-link enabled">Log out</a>
+          <a class="nav-link enabled">Log out</a>
           </li>
         </ul>
         <form class="d-flex" role="search">

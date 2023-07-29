@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if profile %}
+    <h1>Welcome {{ profile.user.username }} to your Profile</h1>
+
+    <strong>Follows</strong><br/>
+    {% for following in profile.follows.all %}
+        <a href="{% url 'profile' following.user.id %}"> @{{ following }}</a><br/>
+
+    {% endfor %}
+    <br><br/>
+    <strong>Followed By</strong><br/>
+    {% for following in profile.followed_by.all %}
+        <a href="{% url 'profile' following.user.id %}"> @{{ following }}</a><br/>
+    {% endfor %}
+
+{% endif %}
+
+{% endblock %}
