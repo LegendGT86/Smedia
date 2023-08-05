@@ -3,6 +3,21 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+#create tweet model
+class Tweet(models.Model):
+    user = models.ForeignKey(
+        User, related_name = "tweets",
+        on_delete= models.DO_NOTHING
+        )
+    body = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return(
+            f"{self.user} "
+            f"({self.created_at:%Y-%m-%d %H:%M}): "
+            f"{self.body}... "
+            )
 #creating A User Profile Model
 #This will associate one user to one profile, on delete all fields cascaded below will be deleted
 #one profile can follow many, symettrical in that you can follow them, they dont have to follow you back
