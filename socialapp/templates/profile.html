@@ -7,9 +7,18 @@
         <div class = "row">
             <div class="col-8">
                 <h1>Welcome {{ profile.user.username }} to your Profile</h1>
+                <br/>
+                {% if tweets %}
+                    {% for tweet in tweets %}
+                    <div class="alert alert-dark" role="alert" style="width: 35rem";>
+                        {{ tweet }}
+                    </div><br/><br/>
+                    {% endfor %}  
+                {% endif %}  
             </div>
 
             <div class="col-4">
+                <br/><br/>
                 <div class="card border-success mb-3" style="width: 18rem;left: 100%;">
     <h5 class="card-header">Follows</h5>
     <div class="card-body">
