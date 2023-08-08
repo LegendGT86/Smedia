@@ -2,13 +2,13 @@
 
 {% block content %}
 <div class="col-md-6 offset-md-3" style="font-weight: bold;">
-    <h1>Register</h1>
+    <h1>Update Profile details</h1>
     <br/>
 
     <form method="POST" action="">
         {% csrf_token %}
         {{ form.as_p}}
-        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
     </form>
 </div>
 

@@ -62,6 +62,11 @@
 
     </form>
     <br/>
+    <!-- Only allow signed in user to edit their own profiles -->
+    {% if request.user.id == profile.user.id %}
+        <a href="{% url 'update_user' %}" class="btn btn-outline-success" name="follow" value="follow" type="submit" style="width: 10rem;position:Fixed; right: 40px; top: 70px; padding: 5px;cursor: pointer;">Update Profile
+        </a>
+    {% endif %}
 
             </div>
         </div>
