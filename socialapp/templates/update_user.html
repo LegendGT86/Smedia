@@ -5,9 +5,11 @@
     <h1>Update Profile details</h1>
     <br/>
 
-    <form method="POST" action="">
+    <form method="POST" action="" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p}}
+        {{ user_form.as_p}}
+        <br/>
+        {{ profile_form.as_p}}
         <button type="submit" class="btn btn-primary">Save Changes</button>
     </form>
 </div>
