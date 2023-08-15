@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
 {% if profile %}
@@ -10,29 +11,45 @@
                 <br/>
                 {% if tweets %}
                     {% for tweet in tweets %}
-                        <div class="alert alert-dark" role="alert" style="width: 55rem; right: 30% ;">
+            <div class="alert alert-dark" role="alert" style="width: 55rem; right: 30% ;" >
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                {% if profile.profile_image %}
+                    <img src="{{ profile.profile_image.url }}" width="80px" height="80px" left="80px" class="rounded-circle" alt="{{profile.user.username}}">
+
+                {% else %}
+                    <img src="{% static 'images/default_profile_pic.png' %}" width="50" height="50" class="rounded-circle" alt="{{profile.user.username}}">
+                {% endif %}
+
+            </div>
+
+            <div class="col-8">
                             {{ tweet.body }}<br/>
                             <small class="text-muted">
-                                {{tweet.created_at}} </br>
+                                {{tweet.created_at}} <br/>
                                 By @{{tweet.user.username}}
                             </small>
-                    </div><br/><br/>
+                        </div><br/><br/>
+            </div>
+        </div>
+    </div>
                     {% endfor %}  
                 {% endif %}  
             </div>
-            <style>
-                img {
-                  padding-left: 110%;                  
-                }
-            </style>
+            <div class="col-2">    
+                <div class="row-1">
+                    <br/><br/>
 
-            <div class="col-md-4">
-                <br/><br/>
-                {% if profile.profile_image %}
-                <img src="{{ profile.profile_image.url }}" width="auto" height="205px">
-                <br/><br/>
-                {% endif %}
-    <div class="card border-success mb-3" style="width: 18rem;left: 100%; position: relative;">
+<!-- profile picture -->
+                    {% if profile.profile_image %}
+                        <img src="{{profile.profile_image.url}}" width="150px" height="150px" class="rounded-circle" >
+                        <br/><br/>
+                    {% endif %}
+                </div>
+            </div> 
+
+    <div class="card border-success mb-3" style="width: 18rem;right:1%;top: 55%; position: fixed;">
         <h5 class="card-header">Follows</h5>
         <div class="card-body">
         <p class="card-text">
@@ -45,7 +62,7 @@
     </div>
                 <br><br/>
 
-                <div class="card border-warning mb-3" style="width: 18rem;left: 100%;">
+                <div class="card border-warning mb-3" style="width: 18rem;right:1%;top: 30%; position: fixed;">
     <h5 class="card-header">Followed By</h5>
     <div class="card-body">
         <p class="card-text">
@@ -61,10 +78,10 @@
     <form method=POST>
     {%csrf_token%}
     {% if profile in user.profile.follows.all %}
-        <button class="btn btn-outline-danger" name="follow" value="unfollow" type="submit" style="width: 10rem;position:absolute; right: 40px; padding: 5px;cursor: pointer;" >Unfollow @{{profile.user.username|lower}}
+        <button class="btn btn-outline-danger" name="follow" value="unfollow" type="submit" style="width: 10rem;position:Fixed; right: 250px; top: 70px; padding: 5px;cursor: pointer;" >Unfollow @{{profile.user.username|lower}}
         </button>
      {% else %} 
-        <button class="btn btn-outline-success" name="follow" value="follow" type="submit" style="width: 10rem;position:absolute; right: 40px; padding: 5px;cursor: pointer;">Follow @{{profile.user.username|lower}}
+        <button class="btn btn-outline-success" name="follow" value="follow" type="submit" style="width: 10rem;position:Fixed; right: 250px; top: 70px; padding: 5px;cursor: pointer;">Follow @{{profile.user.username|lower}}
         </button>
 
     {% endif %}
