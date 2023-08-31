@@ -24,7 +24,7 @@ class TweetForm(forms.ModelForm):
     class Meta:
         model = Tweet
         fields = '__all__'
-        exclude = ("user",)
+        exclude = ("user","likes")
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(label="",widget=forms.TextInput
