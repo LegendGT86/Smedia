@@ -6,10 +6,15 @@ from django.contrib.auth.models import User
 # Profile Extras form
 class ProfilePicForm(forms.ModelForm):
     profile_image = forms.ImageField(label="Profile Picture")
+    profile_bio = forms.CharField(label="Profile Bio", widget=forms.Textarea(attrs={'class':'form-control', 'placeholder': 'Profile Bio'}))
+    website_link = forms.CharField(label= "Website Link",widget=forms.TextInput(attrs={'class':'forms-control', 'placeholder': 'Website'}))
+    facebook_link = forms.CharField(label= "Facebook Link",widget=forms.TextInput(attrs={'class':'forms-control', 'placeholder': 'Facebook'}))
+    instagram_link = forms.CharField(label= "Instagram Link",widget=forms.TextInput(attrs={'class':'forms-control', 'placeholder': 'Instagram'}))
+    linkedin_link = forms.CharField(label= "Linkedin Link",widget=forms.TextInput(attrs={'class':'forms-control', 'placeholder': 'Linkedin'}))
     
     class Meta:
         model = Profile
-        fields = ('profile_image',)
+        fields = ('profile_image','profile_bio','website_link','facebook_link','instagram_link','linkedin_link',)
 
 
 class TweetForm(forms.ModelForm):
