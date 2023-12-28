@@ -38,7 +38,6 @@ class Profile(models.Model):
     #auto_now gives us a date last modified
     # null=True & blank=True means these fields are not mandatory to be filled out
     date_modified = models.DateTimeField(User, auto_now= True)
-    
     profile_image = models.ImageField(null=True, blank=True, upload_to="images/")
     profile_bio = models.CharField(null=True, blank=True, max_length=500)
     website_link = models.CharField(null=True, blank=True, max_length=100)

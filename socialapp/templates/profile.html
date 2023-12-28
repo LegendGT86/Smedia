@@ -7,11 +7,11 @@
     <div class="container text-center">
         <div class = "row">
             <div class="col-8">
-                <h1>Welcome {{ profile.user.username }} to your Profile</h1>
+                <h1>Welcome to your Profile {{ profile.user.username }}</h1>
                 <br/>
                 {% if tweets %}
                     {% for tweet in tweets %}
-            <div class="alert alert-dark" role="alert" style="width: 55rem; right: 30% ;" >
+            <div class="alert alert-dark" role="alert" style="width: 45rem; right: 15% ;" >
     <div class="container">
         <div class="row">
             <div class="col-2">
@@ -35,10 +35,10 @@
 
                             {% if user in tweet.likes.all %}
                                 <a href="{% url 'tweet_like' tweet.id %}">
-                                <i class="fa solid fa-heart-o" style="color: green"></i></a>
+                                <i class="fa-solid fa-heart" style="color:red"></i></a>
                             {% else %}
                                 <a href="{% url 'tweet_like' tweet.id %}">
-                                <i class="fa-solid fa-heart" style="color:red"></i></a>
+                                <i class="fa solid fa-heart-o" style="color: green"></i></a>
                             {% endif %}
                             &nbsp; &nbsp;
                         <a href="{% url 'tweet_show' tweet.id %}">
@@ -57,33 +57,42 @@
                     <br/><br/>
 
 <!-- profile picture -->
-                    {% if profile.profile_image %}
-                        <img src="{{profile.profile_image.url}}" width="150px" height="150px" class="rounded-circle" >
-                        <br/><br/>
-                    {% endif %}
+<!-- target="new" is used to open links in new browser tabs -->
+            {% if profile.profile_image %}
+                <img src="{{profile.profile_image.url}}" width="160px" height="160px" class="rounded-circle" >
+                <br/><br/>
+            {% endif %}
+    
+            {% if profile.website_link %}
+                <a href="{{profile.website_link}}" target="new"><i class="fa-sharp fa-solid fa-location-dot"style="color:rgb(15, 128, 0)"></i> Website</a>
+            {% endif %}
+                <br/><br/>
 
-                    {% if profile.website_link %}
-                        <a href="{{ profile.website_link}}">Website</a>
-                        {% endif %}
-                        <br/><br/>
+            {% if profile.facebook_link %}
+                <a href="{{profile.facebook_link}} " target="new"><i class="fa-brands fa-facebook" style="color:rgb(15, 128, 0)"></i>  Facebook</a>
+            {% endif %} <br/><br/>
 
-                    {% if profile.facebook_link %}
-                        <a href="{{ profile.facebook_link}}">Facebook</a>
-                        {% endif %} <br/><br/>
+            {% if profile.instagram_link %}
+                <a href="{{profile.instagram_link}}" target="new"><i class="fa-brands fa-square-instagram"style="color:rgb(15, 128, 0)"></i> Instagram</a>
+                {% endif %}
+                <br/><br/>
 
-                    {% if profile.instagram_link %}
-                        <a href="{{ profile.instagram_link}}">Instagram</a>
-                        {% endif %}
-                        <br/><br/>
+            {% if profile.linkedin_link %}
+                <a href="{{ profile.linkedin_link}}" target="new"><i class="fa-brands fa-linkedin"style="color:rgb(15, 128, 0)"></i> Linkedin</a>
+                {% endif %}     
+<br/><br/>
 
-                    {% if profile.linkedin_link %}
-                        <a href="{{ profile.linkedin_link}}">Linkedin</a>
-                        {% endif %}
-
+        {% if profile.profile_bio %}
+            <div class="container text-center">
+                <div class="alert alert-dark" role="alert" style="width: 35rem; right: 200px ;" >
+                        <h3>A little more about {{ profile.user.username }}</h3>
+                        {{profile.profile_bio}}
+                        <br/>
                 </div>
-            </div> 
+            </div>
+        {% endif%}
 
-    <div class="card border-success mb-3" style="width: 18rem;right:1%;top: 55%; position: fixed;">
+    <div class="card border-success mb-3" style="width: 12rem;right:1%;top: 55%; position: fixed ;">
         <h5 class="card-header">Follows</h5>
         <div class="card-body">
         <p class="card-text">
@@ -96,26 +105,26 @@
     </div>
                 <br><br/>
 
-                <div class="card border-warning mb-3" style="width: 18rem;right:1%;top: 30%; position: fixed;">
-    <h5 class="card-header">Followed By</h5>
-    <div class="card-body">
-        <p class="card-text">
+        <div class="card border-warning mb-3" style="width: 12rem;right:1%;top: 20%; position: fixed;">
+            <h5 class="card-header">Followed By</h5>
+            <div class="card-body">
+            <p class="card-text">
                 {% for following in profile.followed_by.all %}
                     <a href="{% url 'profile' following.user.id %}"> @{{ following }}</a>
                     <br/>
                     {% endfor %}
-        </p>
+             </p>
+            </div>
         </div>
-    </div>
-    <br/>
+        <br/>
 
     <form method=POST>
     {%csrf_token%}
     {% if profile in user.profile.follows.all %}
-        <button class="btn btn-outline-danger" name="follow" value="unfollow" type="submit" style="width: 10rem;position:Fixed; right: 250px; top: 70px; padding: 5px;cursor: pointer;" >Unfollow @{{profile.user.username|lower}}
+        <button class="btn btn-outline-danger" name="follow" value="unfollow" type="submit" style="width: 10rem;position:Fixed; right: 250px; top: 80px; padding: 5px;cursor: pointer;" >Unfollow @{{profile.user.username|lower}}
         </button>
      {% else %} 
-        <button class="btn btn-outline-success" name="follow" value="follow" type="submit" style="width: 10rem;position:Fixed; right: 250px; top: 70px; padding: 5px;cursor: pointer;">Follow @{{profile.user.username|lower}}
+        <button class="btn btn-outline-success" name="follow" value="follow" type="submit" style="width: 10rem;position:Fixed; right: 250px; top: 80px; padding: 5px;cursor: pointer;">Follow @{{profile.user.username|lower}}
         </button>
 
     {% endif %}
@@ -124,7 +133,7 @@
     <br/>
     <!-- Only allow signed in user to edit their own profiles -->
     {% if request.user.id == profile.user.id %}
-        <a href="{% url 'update_user' %}" class="btn btn-outline-success" name="follow" value="follow" type="submit" style="width: 10rem;position:Fixed; right: 40px; top: 70px; padding: 5px;cursor: pointer;">Update Profile
+        <a href="{% url 'update_user' %}" class="btn btn-outline-success" name="follow" value="follow" type="submit" style="width: 10rem;position:Fixed; right: 40px; top: 80px; padding: 5px;cursor: pointer;">Update Profile
         </a>
     {% endif %}
 

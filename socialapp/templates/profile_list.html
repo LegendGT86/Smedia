@@ -15,7 +15,7 @@
             {% if profile.profile_image %}
             <img src="{{ profile.profile_image.url}}" width=150 height=190 class="w3-round" alt="{{profile.user.username}}">
             {% else %}
-            <img src="{% static 'images/default.jpg' %}" class="img-fluid rounded-start" alt="Profile Image">
+            <img src="{% static 'images/default_none.jpg' %}" class="img-fluid rounded-start" alt="Profile Image">
             {% endif %}
           </div>
           <div class="col-md-8">

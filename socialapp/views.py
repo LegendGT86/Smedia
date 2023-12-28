@@ -55,7 +55,7 @@ def profile(request, pk):
         return render(request, "profile.html",{"profile":profile, "tweets" : tweets})
     else:
         messages.warning(request, ("Sorry but you must be logged in to view this page"))
-        return redirect('home')
+        return redirect('home')   
     
 def login_user(request):
     if request.method == "POST":
@@ -64,7 +64,7 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            messages.success(request, ("Congrads, you have been successfully logged in"))
+            messages.success(request, (f'Congrads, you have been successfully logged in {username}'))
             return redirect('home')
         
         else:
@@ -82,7 +82,7 @@ def register_user(request):
     form = SignUpForm()
     if request.method == 'POST':
         form = SignUpForm(request.POST)
-        if form.is_valid:
+        if form.is_valid():
             form.save()
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
@@ -90,10 +90,13 @@ def register_user(request):
             last_name = form.cleaned_data['last_name']
             email = form.cleaned_data['email']
             #Login User
-            user = authenticate(username = username, password=password)
+            user = authenticate(username=username, password=password)
             login(request,user)
             messages.success(request, (f'You have successfully registered, Welcome {first_name}'))
             return redirect('home')
+    else:
+        form = SignUpForm()
+        return render(request, 'register.html', {'form':form})
     return render(request, "register.html",{'form':form})
 
 def update_user(request):
