@@ -11,10 +11,11 @@ class ProfilePicForm(forms.ModelForm):
     facebook_link = forms.CharField(label= "Facebook Link",widget=forms.TextInput(attrs={'class':'forms-control', 'placeholder': 'Facebook'}))
     instagram_link = forms.CharField(label= "Instagram Link",widget=forms.TextInput(attrs={'class':'forms-control', 'placeholder': 'Instagram'}))
     linkedin_link = forms.CharField(label= "Linkedin Link",widget=forms.TextInput(attrs={'class':'forms-control', 'placeholder': 'Linkedin'}))
+    github_link = forms.CharField(label= "Github Link",widget=forms.TextInput(attrs={'class':'forms-control', 'placeholder': 'Github'}))    
     
     class Meta:
         model = Profile
-        fields = ('profile_image','profile_bio','website_link','facebook_link','instagram_link','linkedin_link',)
+        fields = ('profile_image','profile_bio','website_link','facebook_link','instagram_link','linkedin_link','github_link',)
 
 
 class TweetForm(forms.ModelForm):

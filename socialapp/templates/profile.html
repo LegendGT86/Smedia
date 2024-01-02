@@ -19,7 +19,7 @@
                     <img src="{{ profile.profile_image.url }}" width="80px" height="80px" left="80px" class="rounded-circle" alt="{{profile.user.username}}">
 
                 {% else %}
-                    <img src="{% static 'images/default_profile_pic.png' %}" width="50" height="50" class="rounded-circle" alt="{{profile.user.username}}">
+                    <img src="{% static 'images/default_none.jpg' %}" width="50" height="50" class="rounded-circle" alt="{{profile.user.username}}">
                 {% endif %}
 
             </div>
@@ -64,60 +64,71 @@
             {% endif %}
     
             {% if profile.website_link %}
-                <a href="{{profile.website_link}}" target="new"><i class="fa-sharp fa-solid fa-location-dot"style="color:rgb(15, 128, 0)"></i> Website</a>
+                <a href="{{profile.website_link}}" target="new"><i class="fa-sharp fa-solid fa-location-dot"style="color:rgb(15, 128, 0)"></i> </a>
             {% endif %}
-                <br/><br/>
 
             {% if profile.facebook_link %}
-                <a href="{{profile.facebook_link}} " target="new"><i class="fa-brands fa-facebook" style="color:rgb(15, 128, 0)"></i>  Facebook</a>
-            {% endif %} <br/><br/>
+                <a href="{{profile.facebook_link}} " target="new"><i class="fa-brands fa-facebook" style="color:rgb(15, 128, 0)"></i></a>
+            {% endif %}
+
+            {% if profile.github_link %}
+            <a href="{{profile.github_link}} " target="new"><i class="fa-brands fa-github" style="color:rgb(15, 128, 0)"></i></a>
+        {% endif %}
 
             {% if profile.instagram_link %}
-                <a href="{{profile.instagram_link}}" target="new"><i class="fa-brands fa-square-instagram"style="color:rgb(15, 128, 0)"></i> Instagram</a>
+                <a href="{{profile.instagram_link}}" target="new"><i class="fa-brands fa-square-instagram"style="color:rgb(15, 128, 0)"></i></a>
                 {% endif %}
-                <br/><br/>
 
             {% if profile.linkedin_link %}
-                <a href="{{ profile.linkedin_link}}" target="new"><i class="fa-brands fa-linkedin"style="color:rgb(15, 128, 0)"></i> Linkedin</a>
+                <a href="{{ profile.linkedin_link}}" target="new"><i class="fa-brands fa-linkedin"style="color:rgb(15, 128, 0)"></i></a>
                 {% endif %}     
 <br/><br/>
 
-        {% if profile.profile_bio %}
-            <div class="container text-center">
-                <div class="alert alert-dark" role="alert" style="width: 35rem; right: 200px ;" >
-                        <h3>A little more about {{ profile.user.username }}</h3>
-                        {{profile.profile_bio}}
-                        <br/>
-                </div>
-            </div>
-        {% endif%}
+{% if profile.profile_bio %}
+<div class="container text-center">
+    <div class="alert alert-dark" role="alert" style="width: 30rem; right: 200px ;" >
+            <h3>A little more about {{ profile.user.username }}</h3>
+            {{profile.profile_bio}}
+            <br/>
+    </div>
+</div>
+{% endif%}
 
-    <div class="card border-success mb-3" style="width: 12rem;right:1%;top: 55%; position: fixed ;">
+    <div class="card border-success mb-3" style="width: 15rem;right:1%;top: 45%; position: absolute ;">
         <h5 class="card-header">Follows</h5>
         <div class="card-body">
         <p class="card-text">
                 {% for following in profile.follows.all %}
-                    <a href="{% url 'profile' following.user.id %}"> @{{ following }}</a>
-                    <br/>
+                <a href="{% url 'profile' following.user.id %}"> @{{ following }}</a> 
+                <a href="{% url 'unfollow' following.user.id%}"><i class="fa-solid fa-person-falling-burst" style="color:red"></i><br>
+                </a>
+                </a>             
                 {% endfor %}             
                 </p>
         </div>
     </div>
                 <br><br/>
 
-        <div class="card border-warning mb-3" style="width: 12rem;right:1%;top: 20%; position: fixed;">
+        <div class="card border-warning mb-3" style="width: 15rem;right:1%;top: 10%; position: fixed;">
             <h5 class="card-header">Followed By</h5>
             <div class="card-body">
             <p class="card-text">
                 {% for following in profile.followed_by.all %}
                     <a href="{% url 'profile' following.user.id %}"> @{{ following }}</a>
-                    <br/>
-                    {% endfor %}
+                        {% if following in profile.follows.all %}
+                            <a href="{% url 'unfollow' following.user.id %}">
+                            <i class="fa-solid fa-person-falling-burst" style="color:red"></i><br>&nbsp;
+                        {% else %}
+                            <a href="{% url 'follow' following.user.id %}">
+                            <i class="fa-solid fa-user-plus" style="color:green"></i><br>&nbsp;
+                        {% endif %}
+                {% endfor %}
+                <br/> <a href="{% url 'followers' profile.user.id %}"> See all...</a> 
              </p>
             </div>
         </div>
         <br/>
-
+<!-- Will remove these buttons and replace with icons alongside users
     <form method=POST>
     {%csrf_token%}
     {% if profile in user.profile.follows.all %}
@@ -128,14 +139,17 @@
         </button>
 
     {% endif %}
-
+-->
     </form>
+
     <br/>
-    <!-- Only allow signed in user to edit their own profiles -->
+    <!-- Removing button for now, added to navbar
+        Only allow signed in user to edit their own profiles 
     {% if request.user.id == profile.user.id %}
         <a href="{% url 'update_user' %}" class="btn btn-outline-success" name="follow" value="follow" type="submit" style="width: 10rem;position:Fixed; right: 40px; top: 80px; padding: 5px;cursor: pointer;">Update Profile
         </a>
     {% endif %}
+    -->
 
             </div>
         </div>

@@ -33,7 +33,41 @@ def profile_list(request):
     else:
         messages.warning(request, ("Sorry but you must be logged in to view this page"))
         return redirect('home')
+
+def unfollow(request,pk):
+    if request.user.is_authenticated:
+        #get the profile to unfollow
+        profile = Profile.objects.get(user_id=pk)
+        #Unfollow the user
+        request.user.profile.follows.remove(profile)
+        #save our profile
+        request.user.profile.save()
+        #return message
+        messages.warning(request, (f"You have successfully unfollowed {profile.user.username}"))
+        return redirect(request.META.get("HTTP_REFERER"))
+
+    else:
+        messages.warning(request, ("Sorry but you must be logged in to view this page"))
+        return redirect('home') 
     
+def follow(request,pk):
+    if request.user.is_authenticated:
+        #get the profile to follow
+        profile = Profile.objects.get(user_id=pk)
+        #Unfollow the user
+        request.user.profile.follows.add(profile)
+        #save our profile
+        request.user.profile.save()
+        #return message
+        messages.warning(request, (f"You have successfully followed {profile.user.username}"))
+        return redirect(request.META.get("HTTP_REFERER"))
+
+    else:
+        messages.warning(request, ("Sorry but you must be logged in to view this page"))
+        return redirect('home') 
+    #consider if request.user.id == pk: and objects.exclude(user_id = pk) to remove option to follow self
+
+
 def profile(request, pk):
     if request.user.is_authenticated:
         profile = Profile.objects.get(user_id=pk)
@@ -56,7 +90,20 @@ def profile(request, pk):
     else:
         messages.warning(request, ("Sorry but you must be logged in to view this page"))
         return redirect('home')   
-    
+
+def followers (request, pk):
+    if request.user.is_authenticated:
+        if request.user.id == pk:
+
+            profiles = Profile.objects.exclude(user_id = pk)
+            return render(request, 'followers.html', {"profiles":profiles})
+        else:
+            messages.warning(request, ("Sorry but you cannot view others profile pages"))
+            return redirect('home') 
+    else:
+        messages.warning(request, ("Sorry but you must be logged in to view this page"))
+        return redirect('home')           
+
 def login_user(request):
     if request.method == "POST":
         username = request.POST['username']

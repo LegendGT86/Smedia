@@ -25,12 +25,19 @@
                 <li><a class="dropdown-item" href="{% url 'profile' request.user.id %}">My Profile</a></li>-->
               <li><a class="dropdown-item" href="#">Calendar</a></li>
               <li><a class="dropdown-item" href="#">Notes</a></li>
-              <li><a class="dropdown-item" href="{% url 'profile_list' %}">My Followers</a></li>
+              <li><a class="dropdown-item" href="{% url 'profile_list' %}">Profile list</a></li>
               <li><a class="dropdown-item" href="#">Daily Markets</a>
               <li><a class="dropdown-item" href="#">View emails</a></li>
             </ul>
           </li>
-          
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'update_user' %}">update profile</a></li>
+            </ul>
+
           <li class="nav-item">
             <a class="nav-link"
             href="{% url 'logout' %}">Logout</a>
