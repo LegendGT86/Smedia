@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block content %}
-    <h1>{{ request.user.username }}'s followers</h1>
+    <h1>{{ request.user.username }} is following</h1>
 <br/>
 
 {% if profiles %}
-    {% for profile in profiles.followed_by.all %}
+    {% for profile in profiles.follows.all %}
 
     <div class="card text-bg-success mb-3" style="max-width: 540px;">
         <div class="row g-0">
