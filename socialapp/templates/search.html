@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Search Tweets</h1>
+<br/>
+
+<form method=POST>
+    {% csrf_token %}
+    <input type="input" class="form-control" placeholder="Search tweet" name="search">
+<br/><br/>
+    <button type="submit" class="btn btn-secondary">Search Tweet</button>
+</form>
+
+<br/><br/>
+{% if search %}
+<h3>You searched for: {{ search }}</h3>
+
+{{% for tweet in searched %}}
+    {{ tweet }} <br/><br/>
+{{% endfor %}}
+{% endif %}
+{% endblock %}

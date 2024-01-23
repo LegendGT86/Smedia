@@ -101,7 +101,7 @@ def followers (request, pk):
             return redirect('home') 
     else:
         messages.warning(request, ("Sorry but you must be logged in to view this page"))
-        return redirect('home')     
+        return redirect('home')    
 
 def follows (request, pk):
     if request.user.is_authenticated:
@@ -234,3 +234,16 @@ def edit_tweet(request, pk):
         else:
             messages.success(request, ("Please Log In To Continue..."))
             return redirect('home')
+        
+def notes (request):
+    return render(request, 'notes.html', {})
+               
+def search(request):
+    if request.method =="POST":
+        #grab input from form field
+        search = request.POST['search']
+        #search the database for the tweet
+        searched = Tweet.objects.filter(body__contains = search)
+        return render(request, 'search.html', {'search':search, 'searched':searched})
+    else:
+        return render(request, 'search.html', {})

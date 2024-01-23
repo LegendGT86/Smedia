@@ -15,7 +15,9 @@ urlpatterns = [
     path('tweet_show/<int:pk>',views.tweet_show, name="tweet_show"),
     path('unfollow/<int:pk>',views.unfollow, name="unfollow"),
     path('follow/<int:pk>',views.follow, name="follow"),
+    path('notes/',views.notes, name="notes"),
     path('delete_tweet/<int:pk>',views.delete_tweet, name="delete_tweet"),
     path('edit_tweet/<int:pk>',views.edit_tweet, name="edit_tweet"),
+    path('search/',views.search, name="search"),
 ]
 #revisit naming convention for follow (ln 17)

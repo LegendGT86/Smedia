@@ -24,7 +24,7 @@
               <!-- profile link removed from list as icon redirects to page, but leaving as reference example
                 <li><a class="dropdown-item" href="{% url 'profile' request.user.id %}">My Profile</a></li>-->
               <li><a class="dropdown-item" href="#">Calendar</a></li>
-              <li><a class="dropdown-item" href="#">Notes</a></li>
+              <li><a class="dropdown-item" href="{% url 'notes' %}">Notes</a></li>
               <li><a class="dropdown-item" href="{% url 'profile_list' %}">Profile list</a></li>
               <li><a class="dropdown-item" href="#">Daily Markets</a>
               <li><a class="dropdown-item" href="#">View emails</a></li>
@@ -39,41 +39,53 @@
             </ul>
 
           <li class="nav-item">
+            <a class="nav-link" 
+              href="{% url 'search' %}">Search</a>
+          </li>
+
+          <li class="nav-item">
             <a class="nav-link"
             href="{% url 'logout' %}">Logout</a>
           </li>
         </ul>
-        {% else %}
+
+          {% else %}
             <li class="nav-item"> 
               <a class="nav-link"
               href="{% url 'login' %}">Login</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="{% url 'register' %}">Sign up</a>
-              </li> 
           {% endif %}
+
+          <li class="nav-item"> 
+            <a class="nav-link"
+            href="{% url 'login' %}">Search</a>
+            </li>
+
+          <li class="nav-item"> 
+            <a class="nav-link"
+            href="{% url 'login' %}">Login</a>
+            </li>
+
 
           {% if user.is_authenticated %}
           <ul class="navbar-nav ml-auto">
             <li class="nav-link navbar-brand">
               <a href="{% url 'profile' request.user.id %}">
-  {% if user.profile.profile_image %}
-  <img src="{{ user.profile.profile_image.url }}" class="rounded-circle" width=40>
-  {% else %}
-      <img src="{% static 'images/default_none.jpg' %}" class="rounded-circle" alt="Profile Image"     width=40>          
-  {% endif %}
-              </a>
-              
+              {% if user.profile.profile_image %}
+              <img src="{{ user.profile.profile_image.url }}" class="rounded-circle" width=40>
+              {% else %}
+                  <img src="{% static 'images/default_none.jpg' %}" class="rounded-circle" alt="Profile Image"     width=40>          
+              {% endif %}
+              </a>             
             </li>
           </ul>
           {% endif %}
-
-          <!--
-        <form class="d-flex" role="search" style="position:absolute;left: 80%;">
+          
+        <!--<form class="d-flex" role="search" style="position:absolute;left: 70%;">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-          -->
+        </form>-->
+          
       </div>
     </div>
   </nav>

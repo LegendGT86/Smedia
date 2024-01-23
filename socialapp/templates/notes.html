@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Notes</h1>
+<br/>
+
+<form method=POST>
+    {% csrf_token %}
+
+    <button type="submit" class="btn btn-secondary">Add note</button>
+</form>
+
+{% endblock %}
+<!-- Card colors
+card text-bg-dark mb-3
+card text-bg-light mb-3
+card text-bg-info mb-3
+card text-bg-warning mb-3
+card text-bg-success mb-3
+card text-bg-danger mb-3
+card text-bg-secondary mb-3 -->
