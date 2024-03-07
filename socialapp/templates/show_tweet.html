@@ -9,7 +9,7 @@
 
 
 <br/>
-        <div class="alert alert-dark" role="alert" style="width: 55rem; height: auto; right: 30%;  text-align:justify;">
+        <div class="alert alert-dark" role="alert">
             <div class="container;">
                 <div class="row">
                     <div class="col-1">
@@ -19,8 +19,8 @@
                             <img src="{% static 'images/default_none.jpg' %}" width="50" height="50" class="rounded-circle" alt="{{profile.user.username}}">
                         {% endif %}
                     </div>
-                </div>
-                    <div class="col-11;">
+
+                    <div class="col-11">
                         {{ tweet.body }}<br/>
                         <small class="text-primary">
                              {{tweet.created_at}} <br/>

@@ -16,8 +16,42 @@
 {% if search %}
 <h3>You searched for: {{ search }}</h3>
 
-{{% for tweet in searched %}}
-    {{ tweet }} <br/><br/>
-{{% endfor %}}
+    {% for tweet in searched %}
+            <div class="alert alert-dark" role="alert">
+    <div class="container">
+            <div class="row">
+                <div class="col-1">
+                    {% if tweet.user.profile.profile_image %}
+                        <img src="{{ tweet.user.profile.profile_image.url }}" width="50" height="50"  class="rounded-circle" alt="{{profile.user.username}}">       
+                    {% else %}
+                        <img src="{% static 'images/default_none.jpg' %}" width="50" height="50" class="rounded-circle" alt="{{profile.user.username}}">
+                    {% endif %}
+                </div>
+
+                <div class="col-11">
+                    {{ tweet.body }}<br/>
+                    <small class="text-primary">
+                        {{tweet.created_at}} <br/>
+                        By @{{tweet.user.username}}
+                        &nbsp;&nbsp;
+                            {{tweet.number_of_likes}}
+                            {% if user in tweet.likes.all %}
+                            <a href="{% url 'tweet_like' tweet.id %}">
+                                <i class="fa solid fa-heart-o" style="color: green"></i></a>
+                        {% else %}
+                            <a href="{% url 'tweet_like' tweet.id %}">
+                            <i class="fa-solid fa-heart" style="color:red"></i></a>
+                        {% endif %}
+                        &nbsp; &nbsp;
+                        <a href="{% url 'tweet_show' tweet.id %}">
+                        <i class="fa-solid fa-share" style="color: rgb(179, 124, 7)"></i></a>
+
+                    </small>
+                </div>
+                </div>
+        </div>
+    </div>
+    {% endfor %}
 {% endif %}
+<br/><br/>
 {% endblock %}

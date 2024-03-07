@@ -64,10 +64,15 @@ WSGI_APPLICATION = 'socialproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Socialmedia',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',  # Or the hostname where your PostgreSQL server is running
+        'PORT': '5432',       # Or the port where your PostgreSQL server is listening
     }
 }
+
 
 
 # Password validation
