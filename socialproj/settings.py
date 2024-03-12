@@ -1,3 +1,5 @@
+#-- Active: 1710231419424@@127.0.0.1@5432@data_hub
+
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -62,14 +64,21 @@ WSGI_APPLICATION = 'socialproj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Socialmedia',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'data_hub',
         'USER': 'postgres',
         'PASSWORD': 'admin',
         'HOST': 'localhost',  # Or the hostname where your PostgreSQL server is running
-        'PORT': '5432',       # Or the port where your PostgreSQL server is listening
+        'PORT': '',       # Or the port where your PostgreSQL server is listening
     }
 }
 

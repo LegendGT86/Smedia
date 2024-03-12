@@ -1,0 +1,100 @@
+bOnline@Dylans-Aspire MINGW64 ~/Documents/Smedia (master)
+$ python manage.py makemigrations
+No changes detected
+
+bOnline@Dylans-Aspire MINGW64 ~/Documents/Smedia (master)
+$ python manage.py migrate --run-syncdb
+←[36;1mOperations to perform:←[0m
+←[1m  Synchronize unmigrated apps: ←[0mmessages, staticfiles
+←[1m  Apply all migrations: ←[0madmin, auth, contenttypes, sessions, socialapp
+←[36;1mSynchronizing apps without migrations:←[0m
+  Creating tables...
+    Running deferred SQL...
+←[36;1mRunning migrations:←[0m
+  Applying contenttypes.0001_initial...←[32;1m OK←[0m
+  Applying auth.0001_initial...←[32;1m OK←[0m
+  Applying admin.0001_initial...←[32;1m OK←[0m
+  Applying admin.0002_logentry_remove_auto_add...←[32;1m OK←[0m
+  Applying admin.0003_logentry_add_action_flag_choices...←[32;1m OK←[0m
+  Applying contenttypes.0002_remove_content_type_name...←[32;1m OK←[0m
+  Applying auth.0002_alter_permission_name_max_length...←[32;1m OK←[0m
+  Applying auth.0003_alter_user_email_max_length...←[32;1m OK←[0m
+  Applying auth.0004_alter_user_username_opts...←[32;1m OK←[0m
+  Applying auth.0005_alter_user_last_login_null...←[32;1m OK←[0m
+  Applying auth.0006_require_contenttypes_0002...←[32;1m OK←[0m
+  Applying auth.0007_alter_validators_add_error_messages...←[32;1m OK←[0m
+  Applying auth.0008_alter_user_username_max_length...←[32;1m OK←[0m
+  Applying auth.0009_alter_user_last_name_max_length...←[32;1m OK←[0m
+  Applying auth.0010_alter_group_name_max_length...←[32;1m OK←[0m
+  Applying auth.0011_update_proxy_permissions...←[32;1m OK←[0m
+  Applying auth.0012_alter_user_first_name_max_length...←[32;1m OK←[0m
+  Applying sessions.0001_initial...←[32;1m OK←[0m
+  Applying socialapp.0001_initial...←[32;1m OK←[0m
+  Applying socialapp.0002_profile_date_modified...←[32;1m OK←[0m
+  Applying socialapp.0003_tweet...←[32;1m OK←[0m
+  Applying socialapp.0004_profile_profile_image...←[32;1m OK←[0m
+  Applying socialapp.0005_tweet_likes...←[32;1m OK←[0m
+  Applying socialapp.0006_profile_facebook_link_profile_homepage_link_and_more...←[32;1m OK←[0m
+  Applying socialapp.0007_rename_homepage_link_profile_website_link...←[32;1m OK←[0m
+  Applying socialapp.0008_profile_github_link...←[32;1m OK←[0m
+
+bOnline@Dylans-Aspire MINGW64 ~/Documents/Smedia (master)
+$ python manage.py loaddata data.json
+Traceback (most recent call last):
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "socialapp_profile_user_id_key"
+DETAIL:  Key (user_id)=(6) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    main()
+  File "manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\management\__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\management\__init__.py", line 440, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\management\base.py", line 402, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\management\base.py", line 448, in execute
+    output = self.handle(*args, **options)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\management\commands\loaddata.py", line 102, in handle
+    self.loaddata(fixture_labels)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\management\commands\loaddata.py", line 163, in loaddata
+    self.load_label(fixture_label)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\management\commands\loaddata.py", line 253, in load_label
+    if self.save_obj(obj):
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\management\commands\loaddata.py", line 209, in save_obj
+    obj.save(using=self.using)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\serializers\base.py", line 288, in save
+    models.Model.save_base(self.object, using=using, raw=True, **kwargs)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\models\base.py", line 863, in save_base
+    updated = self._save_table(
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\models\base.py", line 976, in _save_table
+    updated = self._do_update(
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\models\base.py", line 1040, in _do_update
+    return filtered._update(values) > 0
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\models\query.py", line 1216, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\models\sql\compiler.py", line 1398, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\backends\utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+it__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+it__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: Problem installing fixture 'C:\Users\bOnline\Documents\Smedia\data.json': Could not load socialapp.Profile(pk=2): duplicate key value violates unique constraint "socialapp_profile_user_id_key"
+DETAIL:  Key (user_id)=(6) already exists.

@@ -1,0 +1,272 @@
+[{
+    "model": "socialapp.profile",
+    "pk": 1,
+    "fields":
+    {
+        "user": 1,
+        "date_modified": "2024-01-06T08:38:50.828Z",
+        "profile_image": "images/WhatsApp_Image_2023-06-06_at_17.52.37.jpeg",
+        "profile_bio": "A very fine, funny and handsome young man. Well maybe not so young. Well maybe I'm being too modest, or age has grappled my mind",
+        "website_link": "https://google.com",
+        "facebook_link": "https://facebook.com/",
+        "instagram_link": "https://instagram.com/",
+        "linkedin_link": "https://linkedin.com/",
+        "github_link": "https://github.com/LegendGT86/Smedia",
+        "follows": [4, 6, 7, 8, 10, 13, 14, 15, 16]
+    }
+},
+{
+    "model": "socialapp.profile",
+    "pk": 2,
+    "fields":
+    {
+        "user": 6,
+        "date_modified": "2023-08-12T10:28:13.443Z",
+        "profile_image": "images/cartman.jpg",
+        "profile_bio": null,
+        "website_link": null,
+        "facebook_link": null,
+        "instagram_link": null,
+        "linkedin_link": null,
+        "github_link": null,
+        "follows": [3]
+    }
+},
+{
+    "model": "socialapp.profile",
+    "pk": 3,
+    "fields":
+    {
+        "user": 7,
+        "date_modified": "2023-08-12T10:28:03.451Z",
+        "profile_image": "images/stan.jpg",
+        "profile_bio": null,
+        "website_link": null,
+        "facebook_link": null,
+        "instagram_link": null,
+        "linkedin_link": null,
+        "github_link": null,
+        "follows": [1]
+    }
+},
+{
+    "model": "socialapp.profile",
+    "pk": 4,
+    "fields":
+    {
+        "user": 3,
+        "date_modified": "2023-08-12T10:28:42.958Z",
+        "profile_image": "images/mr_mackey.jpg",
+        "profile_bio": null,
+        "website_link": null,
+        "facebook_link": null,
+        "instagram_link": null,
+        "linkedin_link": null,
+        "github_link": null,
+        "follows": [1]
+    }
+},
+{
+    "model": "socialapp.profile",
+    "pk": 5,
+    "fields":
+    {
+        "user": 2,
+        "date_modified": "2023-08-12T10:28:52.235Z",
+        "profile_image": "images/mr.garrison.jpg",
+        "profile_bio": null,
+        "website_link": null,
+        "facebook_link": null,
+        "instagram_link": null,
+        "linkedin_link": null,
+        "github_link": null,
+        "follows": [1]
+    }
+},
+{
+    "model": "socialapp.profile",
+    "pk": 6,
+    "fields":
+    {
+        "user": 4,
+        "date_modified": "2023-08-12T10:28:33.856Z",
+        "profile_image": "images/butters.jpg",
+        "profile_bio": null,
+        "website_link": null,
+        "facebook_link": null,
+        "instagram_link": null,
+        "linkedin_link": null,
+        "github_link": null,
+        "follows": [1]
+    }
+},
+{
+    "model": "socialapp.profile",
+    "pk": 7,
+    "fields":
+    {
+        "user": 5,
+        "date_modified": "2023-08-12T10:28:22.274Z",
+        "profile_image": "images/kenny.jpg",
+        "profile_bio": null,
+        "website_link": null,
+        "facebook_link": null,
+        "instagram_link": null,
+        "linkedin_link": null,
+        "github_link": null,
+        "follows": [1]
+    }
+},
+{
+    "model": "socialapp.profile",
+    "pk": 8,
+    "fields":
+    {
+        "user": 8,
+        "date_modified": "2023-08-15T17:11:09.867Z",
+        "profile_image": "images/towlie.jpg",
+        "profile_bio": null,
+        "website_link": null,
+        "facebook_link": null,
+        "instagram_link": null,
+        "linkedin_link": null,
+        "github_link": null,
+        "follows": [1, 2, 8]
+    }
+},
+{
+    "model": "socialapp.profile",
+    "pk": 9,
+    "fields":
+    {
+        "user": 9,
+        "date_modified": "2023-12-28T09:50:03.112Z",
+        "profile_image": "images/baba.jpg",
+        "profile_bio": "Im just a girl from southpark",
+        "website_link": null,
+        "facebook_link": null,
+        "instagram_link": null,
+        "linkedin_link": null,
+        "github_link": null,
+        "follows": [9]
+    }
+},
+{
+    "model": "socialapp.profile",
+    "pk": 10,
+    "fields":
+    {
+        "user": 10,
+        "date_modified": "2023-12-30T07:45:59.926Z",
+        "profile_image": "images/images_-_2020-11-14T170517.813.jpeg",
+        "profile_bio": "A digital experience",
+        "website_link": "www.google.com",
+        "facebook_link": "https://facebook.com",
+        "instagram_link": "https://google.com",
+        "linkedin_link": "https://google.com",
+        "github_link": null,
+        "follows": [10]
+    }
+},
+{
+    "model": "socialapp.profile",
+    "pk": 11,
+    "fields":
+    {
+        "user": 11,
+        "date_modified": "2023-12-28T18:43:39.499Z",
+        "profile_image": "",
+        "profile_bio": null,
+        "website_link": null,
+        "facebook_link": null,
+        "instagram_link": null,
+        "linkedin_link": null,
+        "github_link": null,
+        "follows": [11]
+    }
+},
+{
+    "model": "socialapp.profile",
+    "pk": 12,
+    "fields":
+    {
+        "user": 12,
+        "date_modified": "2023-12-30T11:09:48.291Z",
+        "profile_image": "images/lela.jpg",
+        "profile_bio": "Im a space captain with one eye and poor depth perception",
+        "website_link": "https://google.com",
+        "facebook_link": "https://facebook.com",
+        "instagram_link": "https://google.com",
+        "linkedin_link": "https://google.com",
+        "github_link": "https://github.com/LegendGT86/Smedia",
+        "follows": [12]
+    }
+},
+{
+    "model": "socialapp.profile",
+    "pk": 13,
+    "fields":
+    {
+        "user": 13,
+        "date_modified": "2023-12-30T11:32:01.843Z",
+        "profile_image": "images/professor.jpg",
+        "profile_bio": "Im 120 years old and still young",
+        "website_link": "https://google.com",
+        "facebook_link": "https://facebook.com",
+        "instagram_link": "https://instagram.com",
+        "linkedin_link": "https://google.com",
+        "github_link": "https://github.com/",
+        "follows": [13]
+    }
+},
+{
+    "model": "socialapp.profile",
+    "pk": 14,
+    "fields":
+    {
+        "user": 14,
+        "date_modified": "2023-12-30T11:26:56.006Z",
+        "profile_image": "images/marvin.jpg",
+        "profile_bio": "I spoke to the ships computer...it hates me",
+        "website_link": "https://google.com",
+        "facebook_link": "https://facebook.com",
+        "instagram_link": "https://instagram.com",
+        "linkedin_link": "https://linkedin.com",
+        "github_link": "https://github.com/",
+        "follows": [14]
+    }
+},
+{
+    "model": "socialapp.profile",
+    "pk": 15,
+    "fields":
+    {
+        "user": 15,
+        "date_modified": "2023-12-30T11:28:50.949Z",
+        "profile_image": "images/zaphod.jpg",
+        "profile_bio": "You think you dont, but I think you think you do",
+        "website_link": "https://google.com",
+        "facebook_link": "https://facebook.com",
+        "instagram_link": "https://instagram.com",
+        "linkedin_link": "https://linkedin.com",
+        "github_link": "https://github.com/",
+        "follows": [15]
+    }
+},
+{
+    "model": "socialapp.profile",
+    "pk": 16,
+    "fields":
+    {
+        "user": 16,
+        "date_modified": "2023-12-30T11:30:56.683Z",
+        "profile_image": "images/ford.jpg",
+        "profile_bio": "Your entire planet was destroyed, Im sorry. Its a tough galaxy out there",
+        "website_link": "https://google.com",
+        "facebook_link": "https://facebook.com",
+        "instagram_link": "https://instagram.com",
+        "linkedin_link": "https://linkedin.com",
+        "github_link": "https://github.com/",
+        "follows": [16]
+    }
+}]

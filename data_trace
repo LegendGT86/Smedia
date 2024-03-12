@@ -1,0 +1,177 @@
+$  python manage.py loaddata data.json
+<DeserializedObject: admin.LogEntry(pk=1)>
+<DeserializedObject: admin.LogEntry(pk=2)>
+<DeserializedObject: admin.LogEntry(pk=3)>
+<DeserializedObject: admin.LogEntry(pk=4)>
+<DeserializedObject: admin.LogEntry(pk=5)>
+<DeserializedObject: admin.LogEntry(pk=6)>
+<DeserializedObject: admin.LogEntry(pk=7)>
+<DeserializedObject: admin.LogEntry(pk=8)>
+<DeserializedObject: admin.LogEntry(pk=9)>
+<DeserializedObject: admin.LogEntry(pk=10)>
+<DeserializedObject: admin.LogEntry(pk=11)>
+<DeserializedObject: admin.LogEntry(pk=12)>
+<DeserializedObject: admin.LogEntry(pk=13)>
+<DeserializedObject: admin.LogEntry(pk=14)>
+<DeserializedObject: admin.LogEntry(pk=15)>
+<DeserializedObject: admin.LogEntry(pk=16)>
+<DeserializedObject: admin.LogEntry(pk=17)>
+<DeserializedObject: admin.LogEntry(pk=18)>
+<DeserializedObject: admin.LogEntry(pk=19)>
+<DeserializedObject: admin.LogEntry(pk=20)>
+<DeserializedObject: admin.LogEntry(pk=21)>
+<DeserializedObject: admin.LogEntry(pk=22)>
+<DeserializedObject: admin.LogEntry(pk=23)>
+<DeserializedObject: admin.LogEntry(pk=24)>
+<DeserializedObject: admin.LogEntry(pk=25)>
+<DeserializedObject: admin.LogEntry(pk=26)>
+<DeserializedObject: admin.LogEntry(pk=27)>
+<DeserializedObject: admin.LogEntry(pk=28)>
+<DeserializedObject: admin.LogEntry(pk=29)>
+<DeserializedObject: admin.LogEntry(pk=30)>
+<DeserializedObject: admin.LogEntry(pk=31)>
+<DeserializedObject: admin.LogEntry(pk=32)>
+<DeserializedObject: admin.LogEntry(pk=33)>
+<DeserializedObject: admin.LogEntry(pk=34)>
+<DeserializedObject: admin.LogEntry(pk=35)>
+<DeserializedObject: admin.LogEntry(pk=36)>
+<DeserializedObject: admin.LogEntry(pk=37)>
+<DeserializedObject: admin.LogEntry(pk=38)>
+<DeserializedObject: admin.LogEntry(pk=39)>
+<DeserializedObject: admin.LogEntry(pk=40)>
+<DeserializedObject: admin.LogEntry(pk=41)>
+<DeserializedObject: admin.LogEntry(pk=42)>
+<DeserializedObject: admin.LogEntry(pk=43)>
+<DeserializedObject: admin.LogEntry(pk=44)>
+<DeserializedObject: auth.Permission(pk=1)>
+<DeserializedObject: auth.Permission(pk=2)>
+<DeserializedObject: auth.Permission(pk=3)>
+<DeserializedObject: auth.Permission(pk=4)>
+<DeserializedObject: auth.Permission(pk=5)>
+<DeserializedObject: auth.Permission(pk=6)>
+<DeserializedObject: auth.Permission(pk=7)>
+<DeserializedObject: auth.Permission(pk=8)>
+<DeserializedObject: auth.Permission(pk=9)>
+<DeserializedObject: auth.Permission(pk=10)>
+<DeserializedObject: auth.Permission(pk=11)>
+<DeserializedObject: auth.Permission(pk=12)>
+<DeserializedObject: auth.Permission(pk=13)>
+<DeserializedObject: auth.Permission(pk=14)>
+<DeserializedObject: auth.Permission(pk=15)>
+<DeserializedObject: auth.Permission(pk=16)>
+<DeserializedObject: auth.Permission(pk=17)>
+<DeserializedObject: auth.Permission(pk=18)>
+<DeserializedObject: auth.Permission(pk=19)>
+<DeserializedObject: auth.Permission(pk=20)>
+<DeserializedObject: auth.Permission(pk=21)>
+<DeserializedObject: auth.Permission(pk=22)>
+<DeserializedObject: auth.Permission(pk=23)>
+<DeserializedObject: auth.Permission(pk=24)>
+<DeserializedObject: auth.Permission(pk=25)>
+<DeserializedObject: auth.Permission(pk=26)>
+<DeserializedObject: auth.Permission(pk=27)>
+<DeserializedObject: auth.Permission(pk=28)>
+<DeserializedObject: auth.Permission(pk=29)>
+<DeserializedObject: auth.Permission(pk=30)>
+<DeserializedObject: auth.Permission(pk=31)>
+<DeserializedObject: auth.Permission(pk=32)>
+<DeserializedObject: auth.User(pk=1)>
+<DeserializedObject: auth.User(pk=2)>
+<DeserializedObject: auth.User(pk=3)>
+<DeserializedObject: auth.User(pk=4)>
+<DeserializedObject: auth.User(pk=5)>
+<DeserializedObject: auth.User(pk=6)>
+<DeserializedObject: auth.User(pk=7)>
+<DeserializedObject: auth.User(pk=8)>
+<DeserializedObject: auth.User(pk=9)>
+<DeserializedObject: auth.User(pk=10)>
+<DeserializedObject: auth.User(pk=11)>
+<DeserializedObject: auth.User(pk=12)>
+<DeserializedObject: auth.User(pk=13)>
+<DeserializedObject: auth.User(pk=14)>
+<DeserializedObject: auth.User(pk=15)>
+<DeserializedObject: auth.User(pk=16)>
+<DeserializedObject: contenttypes.ContentType(pk=1)>
+<DeserializedObject: contenttypes.ContentType(pk=2)>
+<DeserializedObject: contenttypes.ContentType(pk=3)>
+<DeserializedObject: contenttypes.ContentType(pk=4)>
+<DeserializedObject: contenttypes.ContentType(pk=5)>
+<DeserializedObject: contenttypes.ContentType(pk=6)>
+<DeserializedObject: contenttypes.ContentType(pk=7)>
+<DeserializedObject: contenttypes.ContentType(pk=8)>
+<DeserializedObject: sessions.Session(pk=0dtch1p8barji1curlzgcpzuz4zoij2h)>
+<DeserializedObject: sessions.Session(pk=2nnqa9vdqdvah7u0g2r5qjo9077905w3)>
+<DeserializedObject: sessions.Session(pk=bhemiokly6w84wqhdewagajr3av9ej45)>
+<DeserializedObject: sessions.Session(pk=d4zxs421ue8spr3se9uxs4su6qtbgaqn)>
+<DeserializedObject: sessions.Session(pk=g775rztil51m7ct7ee093hpklputqcxs)>
+<DeserializedObject: sessions.Session(pk=gx83w7cjrcr3cmjx9fjdtyhpfgbnd50y)>
+<DeserializedObject: sessions.Session(pk=izbgwsqmuzziqbz0c4gatkq3zko8v0r4)>
+<DeserializedObject: sessions.Session(pk=jqo198zirhb98vqh544c87zxsd8077ua)>
+<DeserializedObject: socialapp.Tweet(pk=2)>
+<DeserializedObject: socialapp.Tweet(pk=3)>
+<DeserializedObject: socialapp.Tweet(pk=5)>
+<DeserializedObject: socialapp.Tweet(pk=6)>
+<DeserializedObject: socialapp.Tweet(pk=7)>
+<DeserializedObject: socialapp.Tweet(pk=8)>
+<DeserializedObject: socialapp.Tweet(pk=9)>
+<DeserializedObject: socialapp.Tweet(pk=10)>
+<DeserializedObject: socialapp.Tweet(pk=11)>
+<DeserializedObject: socialapp.Profile(pk=1)>
+Traceback (most recent call last):
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "socialapp_profile_user_id_key"
+DETAIL:  Key (user_id)=(1) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    main()
+  File "manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\management\__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\management\__init__.py", line 440, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\management\base.py", line 402, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\management\base.py", line 448, in execute
+    output = self.handle(*args, **options)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\management\commands\loaddata.py", line 102, in handle
+    self.loaddata(fixture_labels)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\management\commands\loaddata.py", line 163, in loaddata
+    self.load_label(fixture_label)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\management\commands\loaddata.py", line 254, in load_label
+    if self.save_obj(obj):
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\management\commands\loaddata.py", line 209, in save_obj
+    obj.save(using=self.using)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\core\serializers\base.py", line 288, in save
+    models.Model.save_base(self.object, using=using, raw=True, **kwargs)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\models\base.py", line 863, in save_base
+    updated = self._save_table(
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\models\base.py", line 1006, in _save_table
+    results = self._do_insert(
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\models\base.py", line 1047, in _do_insert
+    return manager._insert(
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\models\query.py", line 1791, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\models\sql\compiler.py", line 1660, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\backends\utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\utils.py", line 91, in __exit__  
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\bOnline\Documents\Smedia\myenv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: Problem installing fixture 'C:\Users\bOnline\Documents\Smedia\data.json': Could not load socialapp.Profile(pk=1): duplicate key value violates unique constraint "socialapp_profile_user_id_key"
+DETAIL:  Key (user_id)=(1) already exists.

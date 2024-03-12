@@ -1,0 +1,4 @@
+listing = ['dog','cat','cat']
+
+for i in listing:
+    print(i)
